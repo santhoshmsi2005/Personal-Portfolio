@@ -1,0 +1,72 @@
+.skills-section {
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* make it span full screen width */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  padding: 2rem 0;
+}
+
+/* Fading edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-color), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-color), transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 25s linear infinite;
+  padding-left: 2rem; /* gap before start */
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.skill-card {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--neon-primary);
+  white-space: nowrap;
+  padding: 1rem 2.5rem;
+  border-radius: 50px; /* pill shape */
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-card:hover {
+  background: var(--neon-primary);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate left by half the total width (since elements are duplicated) */
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
