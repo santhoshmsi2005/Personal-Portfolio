@@ -13,7 +13,7 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       icon: <ShoppingCart size={48} />,
       github: 'https://github.com/santhoshmsi2005/nexmart',
-      live: '#'
+      live: 'https://e-commers-n7q2.vercel.app/'
     },
     {
       id: 2,
@@ -45,17 +45,17 @@ const Projects = () => {
 
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,8 +64,8 @@ const Projects = () => {
         >
           Featured Projects
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="projects-grid"
           variants={containerVariants}
           initial="hidden"
